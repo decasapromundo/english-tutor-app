@@ -15,7 +15,7 @@ except ImportError:
     print("❌ Missing dependency. Run: pip3 install anthropic")
     exit(1)
 
-PORT = 3001
+PORT = int(os.environ.get("PORT", 3001))
 API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 client = anthropic.Anthropic(api_key=API_KEY)
 
